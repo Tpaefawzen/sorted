@@ -137,7 +137,8 @@ bool SortedSyntax::StoreSingleNumber(int n)
 {
     long* psi = m_pCode->Data;
 
-    for( int index = 0; index < m_pCode->nNumbersUsed; index++ )
+    int index;
+    for( index = 0; index < m_pCode->nNumbersUsed; index++ )
         if( psi[index] == n )
             return false;
 
