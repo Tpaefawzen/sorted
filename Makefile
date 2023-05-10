@@ -9,10 +9,9 @@ CXX = g++
 
 src = EnglishNumbers.cpp GermanNumbers.cpp Sorted.cpp SortedSyntax.cpp OPP.cpp gtools.cpp
 
-all: $(target)
-
-$(target): $(src)
-	$(CXX) $(CXXFLAGS) -o $< $@
+release:
+	mkdir -p release
+	$(CXX) $(CXXFLAGS) -o release/$(target) $(src)
 
 debug: # HELP HOW?
 	mkdir -p debug
