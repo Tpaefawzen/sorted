@@ -1,4 +1,4 @@
-.POSIX:
+.PHONY: release debug
 
 # SETTINGS
 root = .
