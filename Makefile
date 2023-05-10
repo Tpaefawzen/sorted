@@ -1,4 +1,4 @@
-.PHONY: release debug
+.PHONY: release debug clean
 
 # SETTINGS
 root = .
@@ -16,3 +16,8 @@ release:
 debug: # HELP HOW?
 	mkdir -p debug
 	$(CXX) $(CXXFLAGS) -g -o debug/$(target) $(src)
+
+clean:
+	rm -f *.gch
+	rm -Rf release/ debug/
+	rm -f examples/*.s,opp
