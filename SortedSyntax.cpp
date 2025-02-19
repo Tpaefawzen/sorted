@@ -303,6 +303,12 @@ bool SortedSyntax::DIRECT_USE( PSLID ps )
                 ps->Index = n-1;
                 return true;
             }
+	    else if( IS_KEYWORD("input") || IS_KEYWORD("eingaben") )
+	    {
+		ps->Type = SLID_TYPE_READ;
+		ps->Index = n-1;
+		return true;
+	    }
         }
     }
     popExpression();
