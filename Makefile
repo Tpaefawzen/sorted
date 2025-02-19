@@ -20,4 +20,4 @@ debug: # HELP HOW?
 clean:
 	rm -f *.gch
 	rm -Rf release/ debug/
-	rm -f examples/*.s,opp
+	rm -f *,opp examples/*.s,opp
