@@ -1,6 +1,6 @@
 #include "precomp.h"
 #include "gtools.h"
-#include "stdarg.h"
+#include <stdarg.h>
 PList::PList()
 {
     m_pHead = m_pTail = 0;

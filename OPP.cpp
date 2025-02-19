@@ -1,7 +1,7 @@
 #include "precomp.h"
 #include "OPP.h"
-#include "ctype.h"
-#include "time.h"
+#include <ctype.h>
+#include <time.h>
 
 bool OPPM::Fits(char** qq,PList* pArguments)
 {

@@ -2,7 +2,7 @@
 #include "SortedSyntax.h"
 #include "EnglishNumbers.h"
 #include "GermanNumbers.h"
-#include "ctype.h"
+#include <ctype.h>
 #include "OPP.h"
 
 bool ReadSortedSourcecode( CODEINFO* pCI, char* filename )
@@ -143,9 +143,9 @@ void GenerateSourceInC( CODEINFO* pCI, char* szFilename )
     {
         int i, j;
 
-        fprintf( fp, "#include \"stdio.h\"\n" );
-        fprintf( fp, "#include \"stdlib.h\"\n" );
-        fprintf( fp, "#include \"string.h\"\n\n" );
+        fprintf( fp, "#include <stdio.h>\n" );
+        fprintf( fp, "#include <stdlib.h>\n" );
+        fprintf( fp, "#include <string.h>\n\n" );
 
         fprintf( fp, "long _[%d]", sizeof(pCI->Data)/sizeof(pCI->Data[0]) );
         if( !pCI->nNumbersUsed )
@@ -457,8 +457,11 @@ int main( int argc, char* argv[] )
             }
         }
     }
-    if( pSourcecode )
-    {
+
+    if ( !pSourcecode ) {
+	fprintf( stderr, "USAGE: Sorted /S<Sourcecode> [/D<Dump>] [/C<C-Sourcecode>]\n" );
+	return 1;
+    }
         static CODEINFO ci;
         memset( &ci, 0, sizeof(ci) );
 
@@ -474,12 +477,7 @@ int main( int argc, char* argv[] )
             si.Interpret(&ci);    
         }
         else printf( "%s is not intelligible.\n", pSourcecode );
-    }
-    else printf( "USAGE: Sorted /S<Sourcecode> [/D<Dump>] [/C<C-Sourcecode>]\n" );
+
     return 0;
     
 }
-
-
-
-
