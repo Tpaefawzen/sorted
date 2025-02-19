@@ -7,7 +7,7 @@ objects = .
 CXXFLAGS = -fno-for-scope -fno-rtti -DTARGET_IS_UNIX -traditional -traditional-cpp -O0
 CXX = g++
 
-src = EnglishNumbers.cpp GermanNumbers.cpp Sorted.cpp SortedSyntax.cpp OPP.cpp gtools.cpp
+src = EnglishNumbers.cpp GermanNumbers.cpp Sorted.cpp SortedSyntax.cpp SortedInterpreter.cpp OPP.cpp gtools.cpp
 
 release:
 	mkdir -p release
