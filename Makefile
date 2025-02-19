@@ -8,16 +8,17 @@ CXXFLAGS = -fno-for-scope -fno-rtti -DTARGET_IS_UNIX -traditional -traditional-c
 CXX = g++
 
 src = EnglishNumbers.cpp GermanNumbers.cpp Sorted.cpp SortedSyntax.cpp SortedInterpreter.cpp OPP.cpp gtools.cpp
+obj = $(src:.cpp=.o)
 
-release:
+release: $(obj)
 	mkdir -p release
-	$(CXX) $(CXXFLAGS) -o release/$(target) $(src)
+	$(CXX) $(CXXFLAGS) -o release/$(target) $(obj)
 
-debug: # HELP HOW?
+debug: $(obj)
 	mkdir -p debug
-	$(CXX) $(CXXFLAGS) -g -o debug/$(target) $(src)
+	$(CXX) $(CXXFLAGS) -g -o debug/$(target) $(obj)
 
 clean:
-	rm -f *.gch
+	rm -f *.o
 	rm -Rf release/ debug/
 	rm -f *,opp examples/*.s,opp
