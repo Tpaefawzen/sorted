@@ -1,3 +1,5 @@
+#pragma once
+
 #include "precomp.h"
 #include "SortedSyntax.h"
 #include "EnglishNumbers.h"
